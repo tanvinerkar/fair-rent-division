@@ -1,3 +1,8 @@
+"""
+Using scipy library
+Program to generate the linearly optimized solution.
+"""
+
 import scipy.optimize
 
 c=[1,1,1]

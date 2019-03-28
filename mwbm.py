@@ -1,9 +1,12 @@
+"""
+Program to find the maximum weighted bipartite graph matching.
+
+This is the code used to find the room allotment.
+"""
+
 import networkx as nx
 from pulp import *
 import matplotlib.pyplot as plt
-# import scipy.optimize
-
-
 
 from_nodes = [1, 2, 3]
 to_nodes = [1, 2, 3]
