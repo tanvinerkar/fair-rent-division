@@ -1,6 +1,5 @@
 Status:Optimal
-e_1_3 = 1.0
+e_1_2 = 1.0
 e_2_1 = 1.0
-e_3_2 = 1.0
-e_4_4 = 1.0
+e_3_3 = 1.0
 Sum of wts of selected edges = 1352.0

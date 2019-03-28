@@ -130,7 +130,7 @@ for i in range(k):
         inp_transpose[j][i]=inp[i][j]
 
 room_allot.sort()
-print(len(room_allot))
+# print(len(room_allot))
 bound=[]
 for i in range(n):
     if int(room_allot[i][1])<=n:
@@ -144,7 +144,7 @@ b_eq =[1000]
 # bound=((216,401),(315,439),(388,512))
 
 res=scipy.optimize.linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='simplex')
-print(res.x)
+# print(res.x)
 
 utility=0.0
 
@@ -164,4 +164,4 @@ for i in range(n):
 
 # print("Room\tPrice")
 for i in range(n):
-    print(str(i+1),'\t', final_answer[i])
+    print(str(i+1),'\t', final_answer[i][1])
