@@ -85,8 +85,8 @@ def solve_wbm(from_nodes, to_nodes, wt):
     return(prob)
 
 
-def print_solution(prob):
-    # Each of the variables is printed with its resolved optimum value
+def write_solution(prob):
+    # Each of the variables is written to the op.txt file with its resolved optimum value
     for v in prob.variables():
         if v.varValue > 1e-3:
             n=v.name
@@ -108,7 +108,7 @@ def get_selected_edges(prob):
 
 wt = create_wt_doubledict(from_nodes, to_nodes)
 p = solve_wbm(from_nodes, to_nodes, wt)
-print_solution(p)
+write_solution(p)
 
 file_o.close()
 
