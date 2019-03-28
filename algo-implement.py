@@ -180,6 +180,6 @@ for i in range(n):
     temp_price=inp[int(room_allot[i][1])-1][i] - avg_utility
     final_answer.append((i+1,temp_price))
 
-# print("Room\tPrice")
+print("Room\tPrice")
 for i in range(n):
     print(str(i+1),'\t', round(final_answer[i][1],2))
