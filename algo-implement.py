@@ -164,4 +164,4 @@ for i in range(n):
 
 # print("Room\tPrice")
 for i in range(n):
-    print(str(i+1),'\t', final_answer[i][1])
+    print(str(i+1),'\t', round(final_answer[i][1],2))
