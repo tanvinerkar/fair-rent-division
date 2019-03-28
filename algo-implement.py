@@ -5,6 +5,7 @@ from pulp import *
 import matplotlib.pyplot as plt
 # import scipy.optimize
 
+totalrent=float(input("Enter total rent: "))
 k=int(input("Enter number of rooms: "))
 n=int(input("Enter number of students: "))
 
@@ -149,7 +150,7 @@ Setting the parameters for the linear optimization function.
 """
 c=[1 for x in range(n)]
 A_eq =[[1 for x in range(n)]]
-b_eq =[1000]
+b_eq =[totalrent]
 res=scipy.optimize.linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='simplex')
 
 """
@@ -180,6 +181,6 @@ for i in range(n):
     temp_price=inp[int(room_allot[i][1])-1][i] - avg_utility
     final_answer.append((i+1,temp_price))
 
-print("Room\tPrice")
+print("Room\t Student\tPrice")
 for i in range(n):
-    print(str(i+1),'\t', round(final_answer[i][1],2))
+    print(str(i+1),'\t',room_allot[i][1],'\t', round(final_answer[i][1],2))
