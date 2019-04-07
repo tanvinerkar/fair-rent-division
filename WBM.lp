@@ -1,7 +1,7 @@
 \* WBM Problem *\
 Maximize
-Total_weights_of_selected_edges: 216 e_1_1 + 439 e_1_2 + 345 e_1_3 + 401 e_2_1
- + 211 e_2_2 + 388 e_2_3 + 173 e_3_1 + 315 e_3_2 + 512 e_3_3
+Total_weights_of_selected_edges: 1000 e_1_1 + 385 e_2_1 + 340 e_2_2
+ + 275 e_2_3 + 712 e_3_1 + 182 e_3_2 + 106 e_3_3
 Subject To
 _C1: e_1_1 + e_1_2 + e_1_3 <= 1
 _C10: e_1_2 + e_2_2 + e_3_2 <= 1

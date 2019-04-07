@@ -144,10 +144,18 @@ for i in range(n):
     if int(room_allot[i][1])<=n:
         mx=inp_transpose[i].pop(int(room_allot[i][1])-1) #Removing the price which the person (to whom that room has been allotted) bid for that room
         mx_new=max(inp_transpose[i])
+        while mx_new>mx:
+                inp_transpose[i].remove(mx_new)
+                if inp_transpose[i]==[]:
+                        mx_new=0
+                        break
+                mx_new=max(inp_transpose[i])
+                
         bound.append((mx_new,mx))
 """
 Setting the parameters for the linear optimization function.
 """
+# print(bound)
 c=[1 for x in range(n)]
 A_eq =[[1 for x in range(n)]]
 b_eq =[totalrent]
