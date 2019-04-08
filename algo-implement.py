@@ -22,6 +22,9 @@ file_o=open('op','a')
 from_nodes = [i for i in range(1,k+1)]
 to_nodes = [i for i in range(1,k+1)]
 
+"""
+Dictionaries to store capacties of nodes. Here, capacity of each node = 1.
+"""
 ucap={}
 vcap={}
 for i in range(1,k+1):
