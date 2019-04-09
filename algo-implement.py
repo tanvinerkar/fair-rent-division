@@ -158,7 +158,7 @@ for i in range(n):
 """
 Setting the parameters for the linear optimization function.
 """
-print(bound)
+# print(bound)
 c=[1 for x in range(n)]
 A_eq =[[1 for x in range(n)]]
 b_eq =[totalrent]
