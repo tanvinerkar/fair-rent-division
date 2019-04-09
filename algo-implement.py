@@ -147,7 +147,7 @@ for i in range(n):
     if int(room_allot[i][1])<=n:
         mx=inp_transpose[i].pop(int(room_allot[i][1])-1) #Removing the price which the person (to whom that room has been allotted) bid for that room
         mx_new=max(inp_transpose[i])
-        while mx_new>mx:
+        while mx_new>=mx:
                 inp_transpose[i].remove(mx_new)
                 if inp_transpose[i]==[]:
                         mx_new=0
@@ -158,12 +158,12 @@ for i in range(n):
 """
 Setting the parameters for the linear optimization function.
 """
-# print(bound)
+print(bound)
 c=[1 for x in range(n)]
 A_eq =[[1 for x in range(n)]]
 b_eq =[totalrent]
 res=scipy.optimize.linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='simplex')
-
+# print(res.x)
 """
 Calculating the utility using the result of the linear optimization.
 Note: The solution returned by the linear optimization function is not the final solution as envy-freeness has not been checked for yet.
