@@ -2,7 +2,6 @@
 import scipy.optimize
 import networkx as nx
 from pulp import *
-# import matplotlib.pyplot as plt
 
 totalrent=float(input("Enter total rent: "))
 k=int(input("Enter number of rooms: "))
@@ -38,7 +37,7 @@ for i in range(1,k+1):
 #just a convenience function to generate a dict of dicts
 
 #Converting the weights dictionary format 
-#from {(value1, value2): wt12, (value1, value3): wt13} 
+#from {(value1, value2): wt12, (value1, value3): wt13}
 #to {value1: {value2: wt12, value3: wt13}}
 
 def create_wt_doubledict(from_nodes, to_nodes):
@@ -106,7 +105,7 @@ def get_selected_edges(prob):
     selected_edges = []
     for su, sv in list(zip(selected_from, selected_to)):
         selected_edges.append((su, sv))
-    return(selected_edges)        
+    return(selected_edges)
 
 wt = create_wt_doubledict(from_nodes, to_nodes)
 p = solve_wbm(from_nodes, to_nodes, wt)
@@ -157,12 +156,11 @@ for i in range(n):
 """
 Setting the parameters for the linear optimization function.
 """
-# print(bound)
 c=[1 for x in range(n)]
 A_eq =[[1 for x in range(n)]]
 b_eq =[totalrent]
 res=scipy.optimize.linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bound, method='simplex')
-# print(res.x)
+
 """
 Calculating the utility using the result of the linear optimization.
 Note: The solution returned by the linear optimization function is not the final solution as envy-freeness has not been checked for yet.
