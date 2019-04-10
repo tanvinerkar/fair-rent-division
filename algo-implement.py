@@ -2,8 +2,7 @@
 import scipy.optimize
 import networkx as nx
 from pulp import *
-import matplotlib.pyplot as plt
-# import scipy.optimize
+# import matplotlib.pyplot as plt
 
 totalrent=float(input("Enter total rent: "))
 k=int(input("Enter number of rooms: "))
