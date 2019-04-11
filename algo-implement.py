@@ -1,6 +1,5 @@
 
 import scipy.optimize
-import networkx as nx
 from pulp import *
 
 totalrent=float(input("Enter total rent: "))
@@ -64,7 +63,7 @@ def solve_wbm(from_nodes, to_nodes, wt):
     # Add the objective function 
     prob += lpSum([wt[u][v] * choices[u][v] 
                    for u in from_nodes
-                   for v in to_nodes]), "Total weights of selected edges"
+                   for v in to_nodes]), "Total weights of Lselected edges"
 
 
     # Constraint set ensuring that the total from/to each node 
