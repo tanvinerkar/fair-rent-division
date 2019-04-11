@@ -126,10 +126,10 @@ file_o.close()
 """
 Creating a transpose of the matrix inp.
 """
-inp_transpose=[[0 for x in range(k)] for y in range(k)]
+inp_transpose=[[0 for x in range(n)] for y in range(k)]
 for i in range(k):
-    for j in range(k):
-        inp_transpose[j][i]=inp[i][j]
+    for j in range(n):
+        inp_transpose[i][j]=inp[j][i]
 
 """
 Sorting the room allocation list to get increasing order of room numbers.
@@ -168,9 +168,23 @@ Note: The solution returned by the linear optimization function is not the final
 
 utility=0.0
 
-for i in range(n):
-    # if int(room_allot[i][1])<=n:
-    utility+= (inp[int(room_allot[i][1])-1][i]) - (res.x)[i]
+"""
+Creating a transpose of the matrix inp again, since inp_transpose was changed to find bounds for the optimization parameters.
+"""
+inp_transpose=[[0 for x in range(n)] for y in range(k)]
+for i in range(k):
+    for j in range(n):
+        inp_transpose[i][j]=inp[j][i]
+
+if type(res.x)!="<class 'list'>":
+    res=[]
+    for i in range(n):
+        # print(i)
+        res.append(inp_transpose[i][int(room_allot[i][1])-1])
+    utility=sum(res) - totalrent
+else:                
+    for i in range(n):
+        utility+= (inp[int(room_allot[i][1])-1][i]) - (res.x)[i]
 
 avg_utility=utility/n
 """
@@ -188,7 +202,16 @@ for i in range(n):
     # if int(room_allot[i][1])<=n:
     temp_price=inp[int(room_allot[i][1])-1][i] - avg_utility
     final_answer.append((i+1,temp_price))
-
-print("Room\t Student\tPrice")
+"""
+print("\nRoom\tStudent\tPrice")
 for i in range(n):
     print(str(i+1),'\t',room_allot[i][1],'\t', round(final_answer[i][1],2))
+"""
+
+def key_sort(t):
+        return t[1]
+room_allot.sort(key=key_sort)
+
+print("\nStudent\t Room\t Price")
+for i in range(n):
+        print(str(i+1),'\t',room_allot[i][0],'\t',round(final_answer[int(room_allot[i][0])-1][1],2))
