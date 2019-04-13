@@ -1,4 +1,3 @@
-
 import scipy.optimize
 from pulp import *
 
