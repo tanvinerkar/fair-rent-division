@@ -1,0 +1,6 @@
+*venv/
+bin/
+share/
+.vscode/
+include/
+lib/

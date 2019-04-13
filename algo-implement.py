@@ -19,7 +19,7 @@ from_nodes = [i for i in range(1,k+1)]
 to_nodes = [i for i in range(1,k+1)]
 
 """
-Dictionaries to store capacties of nodes. Here, capacity of each node = 1.
+Dictionaries to store capacities of nodes. Here, capacity of each node = 1.
 """
 ucap={}
 vcap={}
